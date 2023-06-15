@@ -1,6 +1,20 @@
 .gradle
 **/build/
 !src/**/build/
+*.class
+build/
+.idea/
+bin/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
 
 # Ignore Gradle GUI config
 gradle-app.setting
