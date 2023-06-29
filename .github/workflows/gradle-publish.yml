@@ -90,8 +90,8 @@ jobs:
 
     - name: run gradle build
       run: |
-        ls
         cd construct/obsharedlib
+        ls
         ../../gradlew build
         cd ../..
       env:
