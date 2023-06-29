@@ -1,2 +1,3 @@
 rootProject.name = 'obsharedlib'
-include ':construct:obsharedlib'
+include ':construct:obsharedlib',
+        'database'

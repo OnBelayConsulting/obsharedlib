@@ -12,10 +12,6 @@ repositories {
 	maven {
 		name = "GitHubPackages"
 		url = uri("https://maven.pkg.github.com/onbelayconsulting/obcorelib")
-		credentials {
-			username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-			password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
-		}
 	}
 }
 
@@ -34,8 +30,8 @@ sourceCompatibility = 11
 targetCompatibility = 11
 
 dependencies {
-	implementation group: "com.onbelay.core", name: "obcore", version: "1.9.0"
-	testImplementation group: "com.onbelay.core", name: "obcoretest", version: "1.9.0", classifier: 'tests'
+	implementation group: "com.onbelay.core", name: "obcore", version: "1.0.0"
+	testImplementation group: "com.onbelay.core", name: "obcoretest", version: "1.0.0", classifier: 'tests'
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security'
@@ -108,6 +104,29 @@ artifacts {
 }
 
 
+task runUnitTests(type: Test) {
+	jvmArgs '-Xmx2G', '-Xms512m', '-Duser.timezone=GMT-7'
+	testLogging.exceptionFormat "full" //produces a little more information in the output, mainly useful for development
+	scanForTestClasses = false  //this turns off the auto discovery feature which causes all kinds of false failures
+
+	include "**/*Test.class"
+
+	exclude "**/Base*.class" //have no tests in them
+	exclude "**/*TestCase.class" //has no tests in it
+
+	testLogging {
+		int numTestsPerformed = 0
+		afterTest { desc, result ->
+			numTestsPerformed++
+			if (numTestsPerformed % 100 == 0) {
+				println('Still Testing... finished ' + numTestsPerformed + ' tests')
+			}
+		}
+	}
+
+}
+
+
 publishing {
 	repositories {
 		maven {
@@ -123,13 +142,13 @@ publishing {
 		obcorelibrary(MavenPublication) {
 			groupId = 'com.onbelay.shared'
 			artifactId = 'obshared'
-			version = '1.0.0'
+			version = System.getenv("SEMANTIC_VERSION") ?: project.findProperty("semantic_version")
 			artifact jar
 		}
 		obcorelibraryTest(MavenPublication) {
 			groupId = 'com.onbelay.shared'
 			artifactId = 'obsharedtest'
-			version = '1.0.0'
+			version = System.getenv("SEMANTIC_VERSION") ?: project.findProperty("semantic_version")
 			artifact testJar
 		}
 	}
