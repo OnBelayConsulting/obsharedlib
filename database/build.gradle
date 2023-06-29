@@ -101,25 +101,26 @@ liquibase {
 	} catch (Exception e) {
 		runList = 'noChangeLogActivity'
 	}
+}
 
-	publishing {
-		repositories {
-			maven {
-				name = "GitHubPackages"
-				url = uri("https://maven.pkg.github.com/onbelayconsulting/obshareddb")
-				credentials {
-					username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-					password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
-				}
+
+publishing {
+	repositories {
+		maven {
+			name = "GitHubPackages"
+			url = uri("https://maven.pkg.github.com/onbelayconsulting/obshareddb")
+			credentials {
+				username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+				password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
 			}
 		}
-		publications {
-			obcorelibrary(MavenPublication) {
-				groupId = 'com.onbelay.shared'
-				artifactId = 'obshareddb'
-				version = System.getenv("SEMANTIC_VERSION") ?: project.findProperty("semantic_version")
-				artifact jar
-			}
+	}
+	publications {
+		obcorelibrary(MavenPublication) {
+			groupId = 'com.onbelay.shared'
+			artifactId = 'obshareddb'
+			version = System.getenv("SEMANTIC_VERSION") ?: project.findProperty("semantic_version")
+			artifact jar
 		}
 	}
 }
