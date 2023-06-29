@@ -90,7 +90,10 @@ jobs:
 
     - name: run gradle build
       run: |
-        ./gradlew construct:obsharedlib:build
+        ls
+        cd construct/obsharedlib
+        ../gradlew build
+        cd ../..
       env:
         GPR_TOKEN: ${{ secrets.GPR_TOKEN }}
         GPR_USER: ${{ secrets.GPR_USER }}
