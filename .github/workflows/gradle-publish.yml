@@ -81,9 +81,11 @@ jobs:
         ls database
 
 
-    - name: run gradle deployNew --debug
+    - name: run gradle deployNew
       run: |
-        ./gradlew database:deployNew
+        cd database
+        ./gradlew deployNew
+        cd ..
 
     - name: run gradle unit tests
       run: |
