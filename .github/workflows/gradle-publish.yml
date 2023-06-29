@@ -73,9 +73,8 @@ jobs:
         chmod +x gradlew
 
     - name: Copy overlays to support testing
-      uses: gradle/gradle-build-action@v2
-      with:
-        arguments: copyAllOverlays
+      run: |
+        ./gradlew copyAllOverlays
 
     - name: run gradle deployNew
       run: |
@@ -94,10 +93,20 @@ jobs:
         release_name: ${{ steps.versioning.outputs.next }}
         prerelease: true
 
-    - name: run gradle publish
+    - name: run gradle publish lib
       run: |
         echo version = ${{ steps.versioning.outputs.nextStrict }}
         ./gradlew construct:obsharedlib:publish
+      env:
+        SEMANTIC_VERSION: ${{ steps.versioning.outputs.nextStrict }}
+        GPR_TOKEN: ${{ secrets.GPR_TOKEN }}
+        GPR_USER: ${{ secrets.GPR_USER }}
+
+
+    - name: run gradle publish liquibase scripts
+      run: |
+        echo version = ${{ steps.versioning.outputs.nextStrict }}
+        ./gradlew database:publish
       env:
         SEMANTIC_VERSION: ${{ steps.versioning.outputs.nextStrict }}
         GPR_TOKEN: ${{ secrets.GPR_TOKEN }}

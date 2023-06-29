@@ -17,7 +17,7 @@ dependencies {
 jar {
 	archiveClassifier.set("database")
 	manifest {
-		attributes('Implementation-Title' : 'obsharedlibdb')
+		attributes('Implementation-Title' : 'obshareddb')
 	}
 
 }
@@ -35,7 +35,7 @@ task construct (group: "database", dependsOn: "distZip")
 task distZip(type: Zip,
 		group: 'build',
 		description: 'Zip the Liquibase change sets.') {
-	archiveFileName = 'obsharedlibdb.zip'
+	archiveFileName = 'obshareddb.zip'
 	destinationDirectory = file("$buildDir/dist")
 	from file("$projectDir/src")
 	include '**/*.xml'
@@ -106,7 +106,7 @@ liquibase {
 		repositories {
 			maven {
 				name = "GitHubPackages"
-				url = uri("https://maven.pkg.github.com/onbelayconsulting/obsharedlibdb")
+				url = uri("https://maven.pkg.github.com/onbelayconsulting/obshareddb")
 				credentials {
 					username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
 					password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
@@ -116,8 +116,8 @@ liquibase {
 		publications {
 			obcorelibrary(MavenPublication) {
 				groupId = 'com.onbelay.shared'
-				artifactId = 'obsharedlibdb'
-				version = '1.2.0'
+				artifactId = 'obshareddb'
+				version = System.getenv("SEMANTIC_VERSION") ?: project.findProperty("semantic_version")
 				artifact jar
 			}
 		}
