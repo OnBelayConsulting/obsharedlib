@@ -90,6 +90,9 @@ jobs:
     - name: run gradle build
       run: |
         ./gradlew construct:obsharedlib:build
+      env:
+        GPR_TOKEN: ${{ secrets.GPR_TOKEN }}
+        GPR_USER: ${{ secrets.GPR_USER }}
 
     - name: create release
       uses: comnoco/create-release-action@v2.0.5
