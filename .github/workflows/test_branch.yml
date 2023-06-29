@@ -71,9 +71,11 @@ jobs:
 
     - name: run gradle deployNew
       run: |
-        ./gradlew database:deployNew
+        cd database
+        ../gradlew deployNew
+        cd ..
 
-    - name: run gradle unitTests
+    - name: run gradle build
       run: |
-        ./gradlew construct:obsharedlib:runUnitTests
+        ./gradlew construct:obsharedlib:build
 
