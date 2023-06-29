@@ -76,7 +76,12 @@ jobs:
       run: |
         ./gradlew copyAllOverlays
 
-    - name: run gradle deployNew
+    - name: list directory
+      run: |
+        ls database
+
+
+    - name: run gradle deployNew --debug
       run: |
         ./gradlew database:deployNew
 
