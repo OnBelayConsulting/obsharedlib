@@ -109,7 +109,7 @@ publishing {
 	repositories {
 		maven {
 			name = "GitHubPackages"
-			url = uri("https://maven.pkg.github.com/onbelayconsulting/obshareddb")
+			url = uri("https://maven.pkg.github.com/onbelayconsulting/obsharedlib")
 			credentials {
 				username = project.findProperty("gpr.user") ?: System.getenv("GPR_USER")
 				password = project.findProperty("gpr.key") ?: System.getenv("GPR_TOKEN")
