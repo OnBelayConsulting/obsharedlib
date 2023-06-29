@@ -92,7 +92,7 @@ jobs:
       run: |
         ls
         cd construct/obsharedlib
-        ../gradlew build
+        ../../gradlew build
         cd ../..
       env:
         GPR_TOKEN: ${{ secrets.GPR_TOKEN }}
