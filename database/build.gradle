@@ -82,14 +82,15 @@ liquibase {
 		}
 
 		applySnapshotActivity {
-			changeLogFile 'src/main/resources/obshared/snapshot/changelog.xml'
+			println(project.projectDir.toPath())
+			changeLogFile  '/src/main/resources/obshared/snapshot/changelog.xml'
 			url jdbcProps.get("jdbc.url")
 			username jdbcProps.get("jdbc.username")
 			password jdbcProps.get("jdbc.password")
 		}
 
 		applyChangesActivity {
-			changeLogFile 'src/main/resources/obshared/changes/changelog.xml'
+			changeLogFile  '/src/main/resources/obshared/changes/changelog.xml'
 			url jdbcProps.get("jdbc.url")
 			username jdbcProps.get("jdbc.username")
 			password jdbcProps.get("jdbc.password")
