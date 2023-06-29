@@ -84,7 +84,7 @@ jobs:
     - name: run gradle deployNew
       run: |
         cd database
-        ./gradlew deployNew
+        ../gradlew deployNew
         cd ..
 
     - name: run gradle unit tests
