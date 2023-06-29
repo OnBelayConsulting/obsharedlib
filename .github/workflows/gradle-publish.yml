@@ -87,9 +87,9 @@ jobs:
         ../gradlew deployNew
         cd ..
 
-    - name: run gradle unit tests
+    - name: run gradle build
       run: |
-        ./gradlew construct:obsharedlib:runUnitTests
+        ./gradlew construct:obsharedlib:build
 
     - name: create release
       uses: comnoco/create-release-action@v2.0.5
