@@ -2,8 +2,8 @@ package com.onbelay.shared.codes.model;
 
 import com.onbelay.core.codes.model.AbstractCodeEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "CURRENCY_CODE")

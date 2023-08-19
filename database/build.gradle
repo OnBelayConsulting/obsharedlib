@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.liquibase.gradle' version '2.0.3'
+	id 'org.liquibase.gradle' version '2.2.0'
 	id("maven-publish")
 }
 
@@ -10,8 +10,10 @@ repositories {
 }
 
 dependencies {
-	liquibaseRuntime "org.liquibase:liquibase-core:4.3.5"
+	liquibaseRuntime "org.liquibase:liquibase-core:4.16.0"
+	liquibaseRuntime 'info.picocli:picocli:4.6.1'
 	liquibaseRuntime 'org.postgresql:postgresql:42.2.8'
+	liquibaseRuntime 'com.microsoft.sqlserver:mssql-jdbc:11.2.3.jre17'
 }
 
 jar {
@@ -31,17 +33,6 @@ artifacts {
 }
 
 task construct (group: "database", dependsOn: "distZip")
-
-task distZip(type: Zip,
-		group: 'build',
-		description: 'Zip the Liquibase change sets.') {
-	archiveFileName = 'obshareddb.zip'
-	destinationDirectory = file("$buildDir/dist")
-	from file("$projectDir/src")
-	include '**/*.xml'
-	include '**/*.sql'
-}
-
 
 
 task deployNew() {
