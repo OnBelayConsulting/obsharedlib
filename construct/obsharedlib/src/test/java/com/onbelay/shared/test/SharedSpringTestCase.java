@@ -12,7 +12,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@ComponentScan("com.onbelay")
+@ComponentScan(basePackages = {"com.onbelay.core", "com.onbelay.shared"})
 @EntityScan("com.onbelay.*")
 @RunWith(SpringRunner.class)
 @TestPropertySource( locations="classpath:application-shared-integrationtest.properties")

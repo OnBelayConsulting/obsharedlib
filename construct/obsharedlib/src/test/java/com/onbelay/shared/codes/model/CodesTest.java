@@ -1,5 +1,6 @@
 package com.onbelay.shared.codes.model;
 
+import com.onbelay.core.codes.model.CodeManager;
 import com.onbelay.core.codes.repository.CodeRepository;
 import com.onbelay.core.codes.snapshot.CodeLabel;
 import com.onbelay.shared.test.SharedSpringTestCase;
@@ -13,12 +14,12 @@ public class CodesTest extends SharedSpringTestCase {
     @Autowired
     private CodeRepository codeRepository;
 
-    private SharedCodeManagerBean codeManager ;
+    @Autowired
+    private CodeManager codeManager ;
 
     @Override
     public void setUp() {
         super.setUp();
-        codeManager = new SharedCodeManagerBean(codeRepository);
     }
 
     @Test

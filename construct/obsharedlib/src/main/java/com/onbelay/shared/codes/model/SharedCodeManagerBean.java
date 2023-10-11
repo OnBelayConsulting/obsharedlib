@@ -6,11 +6,6 @@ import com.onbelay.core.codes.repository.CodeRepository;
 
 public class SharedCodeManagerBean extends CodeManagerBean implements CodeManager {
 
-    public SharedCodeManagerBean(CodeRepository codeRepository) {
-        setCodeRepository(codeRepository);
-        initialize();
-    }
-
     public SharedCodeManagerBean() {
         initialize();
     }

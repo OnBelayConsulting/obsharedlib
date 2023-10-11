@@ -8,7 +8,7 @@
 
 
         <createTable tableName="CURRENCY_CODE" tablespace="${tblspace_data}">
-            <column name="CODE_ID" type="java.sql.Types.VARCHAR(40)">
+            <column name="CODE_ID" type="java.sql.Types.VARCHAR(32)">
                 <constraints primaryKey="true" primaryKeyName="CURRENCY_CODE_PK" nullable="false"/>
             </column>
             <column name="CODE_LABEL" type="java.sql.Types.VARCHAR(100)">
