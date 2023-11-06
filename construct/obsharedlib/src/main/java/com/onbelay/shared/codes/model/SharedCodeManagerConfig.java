@@ -1,17 +1,20 @@
 package com.onbelay.shared.codes.model;
 
 import com.onbelay.core.codes.model.CodeManager;
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 @Configuration
-public class SharedCodeManagerConfig {
+public class SharedCodeManagerConfig implements InitializingBean {
 
-    @Primary
-    @Bean
-    public CodeManager codeManager() {
-        return new SharedCodeManagerBean();
+    @Autowired
+    private CodeManager codeManager;
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        codeManager.addCodeEntity(CurrencyCodeEntity.codeFamily, "CurrencyCodeEntity");
+        codeManager.addCodeEntity(BuySellCodeEntity.codeFamily, "BuySellCodeEntity");
+
     }
-
 }
