@@ -34,8 +34,8 @@ sourceCompatibility = 17
 targetCompatibility = 17
 
 dependencies {
-	implementation group: "com.onbelay.core", name: "obcore", version: "2.1.0"
-	testImplementation group: "com.onbelay.core", name: "obcoretest", version: "2.1.0", classifier: 'tests'
+	implementation group: "com.onbelay.core", name: "obcore", version: "2.1.2"
+	testImplementation group: "com.onbelay.core", name: "obcoretest", version: "2.1.2", classifier: 'tests'
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security'
@@ -53,10 +53,8 @@ dependencies {
 	implementation group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '11.2.3.jre17'
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	testImplementation('org.springframework.security:spring-security-test')
-	testImplementation("org.junit.vintage:junit-vintage-engine")
 	implementation('org.springframework.boot:spring-boot-starter-log4j2')
 }
-
 
 configurations {
   all*.exclude group:'org.springframework.boot',
@@ -71,7 +69,6 @@ bootJar {
 test {
 	useJUnitPlatform()
 }
-
 
 jar {
 	enabled = true
