@@ -70,7 +70,6 @@ test {
 	useJUnitPlatform()
 }
 
-
 jar {
 	enabled = true
 	archiveClassifier = ''
