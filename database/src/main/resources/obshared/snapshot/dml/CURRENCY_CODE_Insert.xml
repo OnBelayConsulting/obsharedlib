@@ -18,5 +18,10 @@
             <column name='CODE_LABEL' value='USD'/>
             <column name='DISPLAY_ORDER_NO' value='20'/>
         </insert>
+        <insert tableName='CURRENCY_CODE'>
+            <column name='CODE_ID' value='EURO'/>
+            <column name='CODE_LABEL' value='EURO'/>
+            <column name='DISPLAY_ORDER_NO' value='30'/>
+        </insert>
     </changeSet>
 </databaseChangeLog>

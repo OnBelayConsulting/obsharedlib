@@ -25,8 +25,9 @@ import java.util.Map;
  *
  */
 public enum CurrencyCode {
-	US  ("USD"),
-    CAD ("CAD");
+    CAD  ("CAD"),
+	EURO ("EURO"),
+	USD  ("USD");
 
 	private final String code;
 

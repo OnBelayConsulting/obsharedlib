@@ -28,7 +28,7 @@ public class CodesTest extends SharedSpringTestCase {
     public void testCurrencyCode() {
 
         List<CodeLabel> codeLabels = codeManager.findCodeLabels(CurrencyCodeEntity.codeFamily);
-        assertEquals(2, codeLabels.size());
+        assertEquals(3, codeLabels.size());
     }
 
 
