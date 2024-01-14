@@ -13,8 +13,11 @@ public class SharedCodeManagerConfig implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        codeManager.addCodeEntity(CurrencyCodeEntity.codeFamily, "CurrencyCodeEntity");
         codeManager.addCodeEntity(BuySellCodeEntity.codeFamily, "BuySellCodeEntity");
+        codeManager.addCodeEntity(CommodityCodeEntity.codeFamily, "CommodityCodeEntity");
+        codeManager.addCodeEntity(CurrencyCodeEntity.codeFamily, "CurrencyCodeEntity");
+        codeManager.addCodeEntity(FrequencyCodeEntity.codeFamily, "FrequencyCodeEntity");
+        codeManager.addCodeEntity(UnitOfMeasureCodeEntity.codeFamily, "UnitOfMeasureCodeEntity");
 
     }
 }

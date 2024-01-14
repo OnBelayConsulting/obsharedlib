@@ -10,6 +10,9 @@
 >
     <include file="BUY_SELL_CODE_Insert.xml" relativeToChangelogFile="true"/>
     <include file="CURRENCY_CODE_Insert.xml" relativeToChangelogFile="true"/>
+    <include file="COMMODITY_CODE_Insert.xml" relativeToChangelogFile="true"/>
+    <include file="FREQUENCY_CODE_Insert.xml" relativeToChangelogFile="true"/>
+    <include file="UNIT_OF_MEASURE_CODE_Insert.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
 

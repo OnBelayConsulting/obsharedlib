@@ -25,6 +25,20 @@ public class CodesTest extends SharedSpringTestCase {
     }
 
     @Test
+    public void testBuySellCode() {
+
+        List<CodeLabel> codeLabels = codeManager.findCodeLabels(BuySellCodeEntity.codeFamily);
+        assertEquals(2, codeLabels.size());
+    }
+
+    @Test
+    public void testCommodityCode() {
+
+        List<CodeLabel> codeLabels = codeManager.findCodeLabels(CommodityCodeEntity.codeFamily);
+        assertEquals(2, codeLabels.size());
+    }
+
+    @Test
     public void testCurrencyCode() {
 
         List<CodeLabel> codeLabels = codeManager.findCodeLabels(CurrencyCodeEntity.codeFamily);
@@ -33,10 +47,18 @@ public class CodesTest extends SharedSpringTestCase {
 
 
     @Test
-    public void testBuySellCode() {
+    public void testFrequencyCode() {
 
-        List<CodeLabel> codeLabels = codeManager.findCodeLabels(BuySellCodeEntity.codeFamily);
+        List<CodeLabel> codeLabels = codeManager.findCodeLabels(FrequencyCodeEntity.codeFamily);
         assertEquals(2, codeLabels.size());
     }
+
+    @Test
+    public void testUnitOfMeasureCode() {
+
+        List<CodeLabel> codeLabels = codeManager.findCodeLabels(UnitOfMeasureCodeEntity.codeFamily);
+        assertEquals(2, codeLabels.size());
+    }
+
 
 }
