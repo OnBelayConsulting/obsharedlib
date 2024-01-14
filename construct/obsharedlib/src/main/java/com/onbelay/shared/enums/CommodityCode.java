@@ -25,9 +25,8 @@ import java.util.Map;
  *
  */
 public enum CommodityCode {
-    CAD  ("CAD"),
-	EURO ("EURO"),
-	USD  ("USD");
+    NATGAS  ("NATGAS"),
+	CRUDE  ("CRUDE");
 
 	private final String code;
 
