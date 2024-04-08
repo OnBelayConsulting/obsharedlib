@@ -9,6 +9,11 @@
 >
     <changeSet author="lefeuvrem" id="1.0" objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
         <insert tableName='FREQUENCY_CODE'>
+            <column name='CODE_ID' value='H'/>
+            <column name='CODE_LABEL' value='Hourly'/>
+            <column name='DISPLAY_ORDER_NO' value='5'/>
+        </insert>
+        <insert tableName='FREQUENCY_CODE'>
             <column name='CODE_ID' value='D'/>
             <column name='CODE_LABEL' value='Daily'/>
             <column name='DISPLAY_ORDER_NO' value='10'/>

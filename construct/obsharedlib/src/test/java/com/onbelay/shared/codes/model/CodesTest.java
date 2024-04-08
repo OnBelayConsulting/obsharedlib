@@ -50,7 +50,7 @@ public class CodesTest extends SharedSpringTestCase {
     public void testFrequencyCode() {
 
         List<CodeLabel> codeLabels = codeManager.findCodeLabels(FrequencyCodeEntity.codeFamily);
-        assertEquals(2, codeLabels.size());
+        assertEquals(3, codeLabels.size());
     }
 
     @Test

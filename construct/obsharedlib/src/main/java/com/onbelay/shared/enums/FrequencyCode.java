@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum FrequencyCode {
+	HOURLY 		("H"),
     DAILY 		("D"),
 	MONTHLY  	("M");
 
