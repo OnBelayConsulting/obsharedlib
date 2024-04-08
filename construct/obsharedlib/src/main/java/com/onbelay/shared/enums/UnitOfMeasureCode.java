@@ -26,6 +26,7 @@ import java.util.Map;
  */
 public enum UnitOfMeasureCode {
 	GJ  	("GJ"),
+	MWH  	("MWH"),
 	MMBTU 	("MMBTU");
 
 	private final String code;

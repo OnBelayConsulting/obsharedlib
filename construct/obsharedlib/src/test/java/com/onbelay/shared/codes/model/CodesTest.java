@@ -57,7 +57,7 @@ public class CodesTest extends SharedSpringTestCase {
     public void testUnitOfMeasureCode() {
 
         List<CodeLabel> codeLabels = codeManager.findCodeLabels(UnitOfMeasureCodeEntity.codeFamily);
-        assertEquals(2, codeLabels.size());
+        assertEquals(3, codeLabels.size());
     }
 
 
