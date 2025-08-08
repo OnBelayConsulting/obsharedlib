@@ -18,5 +18,10 @@
             <column name='CODE_LABEL' value='Crude'/>
             <column name='DISPLAY_ORDER_NO' value='20'/>
         </insert>
+        <insert tableName='COMMODITY_CODE'>
+            <column name='CODE_ID' value='POWER'/>
+            <column name='CODE_LABEL' value='POWER'/>
+            <column name='DISPLAY_ORDER_NO' value='30'/>
+        </insert>
     </changeSet>
 </databaseChangeLog>

@@ -26,6 +26,7 @@ import java.util.Map;
  */
 public enum CommodityCode {
     NATGAS  ("NATGAS"),
+	POWER  ("POWER"),
 	CRUDE  ("CRUDE");
 
 	private final String code;
